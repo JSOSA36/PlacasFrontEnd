@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="containter">
+    <h4 class="text-center">Listado de Vehiculos</h4>
+    <button type="button" style="margin-left: 1100px;" (click)="CallAddVehiculo()" class="btn btn-primary">Agregar</button>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">modelo</th>
+            <th scope="col">Chasi</th>
+            <th scope="col">Color</th>
+            <th scope="col">Ano</th>
+            <th scope="col">Tipove Vehiculo</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let iten of _Vehiculos;let i = index">
+          <tr>
+            <th scope="row">{{iten.idVehiculos}}</th>
+            <td>{{iten.modelo}}</td>
+            <td>{{iten.chasi}}</td>
+            <td>{{iten.color}}</td>
+            <td>{{iten.ano}}</td>
+            
+            <td>{{iten.id}}</td>
+            <td>
+            <button style="margin-left: 10px;" (click)="EditarVehiculo(iten)"  type="button" class="btn btn-success">Actualizar</button>
+            <button style="margin-left: 10px;" (click)="EliminarVehiculo(iten.idVehiculos)" type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+          </tr>
+          
+          
+        
+        </tbody>
+      </table>
+</div>

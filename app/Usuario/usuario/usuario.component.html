@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="containter">
+    <h4 class="text-center">Listado de Usuarios</h4>
+    <button type="button" style="margin-left: 1100px;" (click)="CallAddUsuario()" class="btn btn-primary">Agregar</button>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">UserName</th>
+            <th scope="col">PassWord</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let iten of ListadoUsuarios;let i = index">
+          <tr>
+            <th scope="row">{{iten.id}}</th>
+            <td>{{iten.nombre}}</td>
+            <td>{{iten.apellido}}</td>
+            <td>{{iten.userName}}</td>
+            <td>{{iten.passWord}}</td>
+            <td>
+            <button style="margin-left: 10px;" (click)="EditarUsuario(iten)" type="button" class="btn btn-success">Actualizar</button>
+            <button style="margin-left: 10px;" (click)="EliminarUsuario(iten.id)" type="button" class="btn btn-danger">Eliminar</button>
+        </td>
+          </tr>
+          
+          
+        
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container" >
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">Registro de Clientes</div>
+        <div class="panel-body">
+
+            <form [formGroup]="profileForm" *ngIf="profileForm" style="margin-left: 200px; margin-right: 200px;"  >
+                <div>
+                  <label for="exampleInputEmail1">Modelo</label>
+                  <input type="text" class="form-control" required  formControlName="modelo" id="modelo"  aria-describedby="emailHelp" placeholder="Modelo">
+                 
+                </div>
+                <div>
+                  <label for="exampleInputPassword1">Chasi</label>
+                  <input type="text" class="form-control" required formControlName="chasi" id="chasi" placeholder="Chasi">
+                </div>
+                <div>
+                    <label for="exampleInputPassword1">Color</label>
+                    <input type="text" class="form-control" required formControlName="color" id="color" placeholder="Color">
+                  </div>
+                  <div >
+                    <label for="exampleInputPassword1">Ano</label>
+                    <input type="text" required class="form-control" formControlName="ano"  id="ano" placeholder="Ano">
+                  </div>
+                     
+                  <div>
+                    <label for="id">Tipo Vehiculos</label>
+                    <select required  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="id">
+                        
+                        <option *ngFor="let iten of _TipoVehiculos;let i = index" value={{iten.id}}>{{iten.tipo}}</option>
+                        
+                      </select>
+                    </div>
+               <br>
+                <button type="submit" (click)="InsertarVeiculos()" class="btn btn-primary">Guardar</button>
+                
+                
+              </form>
+        </div>
+      </div>
+    
+  </div>
+
+

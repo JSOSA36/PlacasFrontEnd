@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container" >
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">Registro de Usuarios</div>
+        <div class="panel-body">
+
+            <form [formGroup]="profileForm" *ngIf="profileForm" style="margin-left: 200px; margin-right: 200px;"  >
+                <div>
+                  <label for="exampleInputEmail1">Nombre</label>
+                  <input type="text" class="form-control" required  formControlName="Nombre" id="Nombre" name="Nombre" aria-describedby="emailHelp" placeholder="Nombre">
+                 
+                </div>
+                <div>
+                  <label for="exampleInputPassword1">Apellidos</label>
+                  <input type="text" class="form-control" required formControlName="Apellido" id="Apellidos" placeholder="Apellidos">
+                </div>
+                <div >
+                    <label for="exampleInputPassword1">Usuario</label>
+                    <input type="text" class="form-control" required formControlName="UserName" id="UserName" placeholder="Usuario">
+                  </div>
+                  <div >
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" required class="form-control" formControlName="Password"  id="Password" placeholder="Password">
+                  </div>
+               <br>
+                <button type="submit" (click)="InsertarUsuario()" class="btn btn-primary">Guardar</button>
+              </form>
+        </div>
+      </div>
+    
+  </div>
+

@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="container" >
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">Registro de Clientes</div>
+        <div class="panel-body">
+
+            <form [formGroup]="profileForm" *ngIf="profileForm" style="margin-left: 200px; margin-right: 200px;"  >
+                <div>
+                  <label for="exampleInputEmail1">Nombre</label>
+                  <input type="text" class="form-control" required  formControlName="Nombre" id="Nombre"  aria-describedby="emailHelp" placeholder="Nombre">
+                 
+                </div>
+                <div>
+                  <label for="exampleInputPassword1">Apellidos</label>
+                  <input type="text" class="form-control" required formControlName="apellido" id="apellido" placeholder="Apellido">
+                </div>
+                <div>
+                    <label for="exampleInputPassword1">Fecha Nacimiento</label>
+                    <input type="text" class="form-control" required formControlName="fechaNacimiento" id="fechaNacimiento" placeholder="Fecha Nacimiento">
+                  </div>
+                  <div >
+                    <label for="exampleInputPassword1">cedula</label>
+                    <input type="text" required class="form-control" formControlName="cedula"  id="cedula" placeholder="Cedula">
+                  </div>
+                     
+                  <div>
+                    <label for="exampleInputPassword1">TipoPersona</label>
+                    <select required  class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="idTipoPersona">
+                        
+                        <option *ngFor="let iten of _TipoPersona;let i = index" value={{iten.idTipoPersona}}>{{iten.tipo}}</option>
+                        
+                      </select>
+                    </div>
+               <br>
+                <button type="submit" (click)="InsertarCliente()" class="btn btn-primary">Guardar</button>
+              </form>
+        </div>
+      </div>
+    
+  </div>
+

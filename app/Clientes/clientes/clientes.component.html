@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<div class="containter">
+    <h4 class="text-center">Listado de Clientes</h4>
+    <button type="button" style="margin-left: 1100px;" (click)="CallAddClientes()" class="btn btn-primary">Agregar</button>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cedula</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">fechaNacimiento</th>
+            <th scope="col">Tipo Persona</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let iten of ListadoClientes;let i = index">
+          <tr>
+            <th scope="row">{{iten.idClientes}}</th>
+            <td>{{iten.Nombre}}</td>
+            <td>{{iten.cedula}}</td>
+            <td>{{iten.apellido}}</td>
+           
+            <td>{{iten.fechaNacimiento}}</td>
+            <td>{{iten.tipoPersona.tipo}}</td>
+           
+            
+      
+          </tr>
+          
+          
+        
+        </tbody>
+      </table>
+</div>
+
